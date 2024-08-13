@@ -2,6 +2,7 @@
 import styles from '../page.module.css'
 import { useState } from 'react'
 import {useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 export default function AddPosts(){
     const [title, setTitle] = useState('');
@@ -26,7 +27,7 @@ export default function AddPosts(){
             'Content-Type': 'application/json'
             },
             body: JSON.stringify({title, content})})
-            
+
         router.refresh();
       } catch(error){
         console.error(error)
